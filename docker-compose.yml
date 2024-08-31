@@ -4,14 +4,39 @@ services:
     container_name: api_service
     ports:
       - "4000:80"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.1"    # Allocate up to 10% of the CPU
+          memory: "512M" # Limit to 512 MB of RAM
+        reservations:
+          cpus: "0.05"   # Reserve up to 5% of the CPU
+          memory: "256M" # Reserve 256 MB of RAM
 
   rubyapi_service:
     build: ./rubyapi
     container_name: rubyapi_service
     ports:
       - "3000:80"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.1"    # Allocate up to 10% of the CPU
+          memory: "512M" # Limit to 512 MB of RAM
+        reservations:
+          cpus: "0.05"   # Reserve up to 5% of the CPU
+          memory: "256M" # Reserve 256 MB of RAM
+
   portfolio:
     build: ./andrewnzioki
     container_name: portfolio
     ports:
       - "8000:80"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.1"    # Allocate up to 10% of the CPU
+          memory: "512M" # Limit to 512 MB of RAM
+        reservations:
+          cpus: "0.05"   # Reserve up to 5% of the CPU
+          memory: "256M" # Reserve 256 MB of RAM
