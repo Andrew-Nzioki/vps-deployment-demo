@@ -1,0 +1,12 @@
+services:
+  api_service:
+    build: ./api
+    container_name: api_service
+    ports:
+      - "4000:80"
+
+  rubyapi_service:
+    build: ./rubyapi
+    container_name: rubyapi_service
+    ports:
+      - "3000:80"
