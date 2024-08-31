@@ -4,6 +4,6 @@ app = FastAPI(
     docs_url="/"
 )
 
-@app.get("/health")
+@app.get("/rubyapi")
 def read_root():
     return {"message": "Goodbye, World!"}
